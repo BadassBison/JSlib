@@ -1,0 +1,22 @@
+{
+  "name": "jslib",
+  "version": "1.0.0",
+  "description": "JS Library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BadassBison/JSlib.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Shawn Scott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BadassBison/JSlib/issues"
+  },
+  "homepage": "https://github.com/BadassBison/JSlib#readme"
+}
