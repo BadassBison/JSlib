@@ -1,4 +1,10 @@
 import { DOMNodeCollection } from "./dom_node_collection.js";
+import {
+        dist,
+        throttle
+    } from "./utils.js";
+
+window.dist = dist;
 
 window.$ = function (arg) {
      
@@ -12,22 +18,9 @@ window.$ = function (arg) {
     return new DOMNodeCollection(arrList);
 };
 
-
-
-
-
-
-// https://humanwhocodes.com/blog/2007/11/30/the-throttle-function/
-function throttle(method, scope) {
-    clearTimeout(method._tId);
-    method._tId = setTimeout(function(){
-        method.call(scope);
-    }, 2000);
-};
-
-function testing(){
-    console.log("throttled");
-}
+// function testing(){
+//     console.log("throttled");
+// }
 
 // window.onresize = function(){
 //     throttle(testing, window);

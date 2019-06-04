@@ -105,7 +105,19 @@ eval("class DOMNodeCollection {\n    constructor(array) {\n        this.htmlElem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom_node_collection.js */ \"./src/dom_node_collection.js\");\n/* harmony import */ var _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\nwindow.$ = function (arg) {\n     \n    let list = document.querySelectorAll(arg);\n\n    const arrList = [];\n    for (let i of list) {\n        arrList.push(i);\n    }\n    \n    return new _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__[\"DOMNodeCollection\"](arrList);\n};\n\n\n\n\n\n\n// https://humanwhocodes.com/blog/2007/11/30/the-throttle-function/\nfunction throttle(method, scope) {\n    clearTimeout(method._tId);\n    method._tId = setTimeout(function(){\n        method.call(scope);\n    }, 2000);\n};\n\nfunction testing(){\n    console.log(\"throttled\");\n}\n\n// window.onresize = function(){\n//     throttle(testing, window);\n// };\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom_node_collection.js */ \"./src/dom_node_collection.js\");\n/* harmony import */ var _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.js */ \"./src/utils.js\");\n\n\n\nwindow.dist = _utils_js__WEBPACK_IMPORTED_MODULE_1__[\"dist\"];\n\nwindow.$ = function (arg) {\n     \n    let list = document.querySelectorAll(arg);\n\n    const arrList = [];\n    for (let i of list) {\n        arrList.push(i);\n    }\n    \n    return new _dom_node_collection_js__WEBPACK_IMPORTED_MODULE_0__[\"DOMNodeCollection\"](arrList);\n};\n\n// function testing(){\n//     console.log(\"throttled\");\n// }\n\n// window.onresize = function(){\n//     throttle(testing, window);\n// };\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/utils.js":
+/*!**********************!*\
+  !*** ./src/utils.js ***!
+  \**********************/
+/*! exports provided: dist, throttle */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"dist\", function() { return dist; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"throttle\", function() { return throttle; });\nconst dist = (p1, p2) => {\n    let dx, dy;\n    if (p1 instanceof Array) {\n        dx = p1[0] - p2[0];\n        dy = p1[1] - p2[1];\n    } else {\n        dx = p1.x - p2.x;\n        dy = p1.y - p2.y;\n    }\n    return Math.sqrt( dx*dx + dy*dy );\n}\n\n// https://humanwhocodes.com/blog/2007/11/30/the-throttle-function/\nconst throttle = (method, scope) => {\n    clearTimeout(method._tId);\n    method._tId = setTimeout(function(){\n        method.call(scope);\n    }, 2000);\n};\n\n//# sourceURL=webpack:///./src/utils.js?");
 
 /***/ })
 
