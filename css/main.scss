@@ -1,0 +1,34 @@
+$red: red;
+$orange: orange;
+$yellow: yellow;
+$green: green;
+$blue: blue;
+$purple: purple;
+$border: 2px solid black;
+
+@import 'reset';
+
+div {
+    height: 40px;
+    margin: 20px;
+    color: white;
+    border: $border;
+}
+#a {
+    background-color: $red;
+}
+#b {
+    background-color: $orange;
+}
+#c {
+    background-color: $yellow;
+}
+#d {
+    background-color: $green;
+}
+#e {
+    background-color: $blue;
+}
+#f {
+    background-color: $purple;
+}
