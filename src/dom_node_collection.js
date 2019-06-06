@@ -57,6 +57,39 @@ DOMNodeCollection.prototype.border = function(arg) {
     });
 }
 
+DOMNodeCollection.prototype.shrink = function() {
+    this.htmlElements.forEach(el => {
+        let currentWidth = el.clientWidth;
+        let acc = 1.0;
+        setInterval(() => {
+            if(currentWidth > 100) {
+                currentWidth -= acc;
+                acc += 0.1;
+                el.style.width = currentWidth + "px";
+            } else {
+                clearInterval();
+            }
+        }, 10);
+    });
+}
+
+DOMNodeCollection.prototype.grow = function() {
+    this.htmlElements.forEach(el => {
+        let currentWidth = el.clientWidth;
+        let acc = 1.0;
+        setInterval(() => {
+            if(currentWidth < window.innerWidth - 44) {
+                currentWidth += acc;
+                acc += 0.1;
+                el.style.width = currentWidth + "px";
+            } else {
+                clearInterval();
+                // el.style.width = "100%"
+            }
+        }, 10);
+    });
+}
+
 module.exports = {
     DOMNodeCollection
 };
